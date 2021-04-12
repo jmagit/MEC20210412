@@ -1,4 +1,6 @@
-package com.example;
+package com.example.juego;
+
+import com.example.Pieza;
 
 public class Tablero {
 	private Pieza[][] piezas = new Pieza[8][8];

@@ -1,5 +1,7 @@
 package com.example;
 
+import com.example.juego.Tablero;
+
 public class Juego {
 	private Tablero tablero = new Tablero();
 	
