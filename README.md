@@ -1,1 +1,1 @@
-# Curso de Java Avanzado
+# Curso de Java Intermedio
