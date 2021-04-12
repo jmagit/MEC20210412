@@ -9,6 +9,18 @@ public class Juego {
 	}
 	
 	public Tablero getTablero() {
-		return tablero;
+		return tablero.clone();
+	}
+	
+	public void mover(int filaini, int columnaini, int filafin, int columnafin) {
+		tablero.ponPieza(filafin, columnafin, tablero.damePieza(filaini, columnaini));
+		tablero.quitaPieza(filaini, columnaini);
+	}
+	
+	@Override
+	public Juego clone()  {
+		Juego copiaJuego = new Juego();
+		copiaJuego.tablero = tablero.clone();
+		return copiaJuego;
 	}
 }
