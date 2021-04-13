@@ -2,11 +2,16 @@ package com.example;
 
 @Autor(nombre = "Yo mismo")
 //@Table("POSICIONE")
+//@Value
 public class Posicion {
 //	@Colum("kk")
 //	@NotNull
 //	@Range(min=0, max=7)
-	private int fila, columna;
+	
+//	@Textbox()
+//	@Title("Fila:")
+	private int fila;
+	private int columna;
 
 	public Posicion(int fila, int columna) {
 		if(0 > fila || fila > 7)
