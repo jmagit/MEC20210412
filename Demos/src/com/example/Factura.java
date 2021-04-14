@@ -5,12 +5,14 @@ import java.util.List;
 
 public class Factura {
 	public static enum Estado { NUEVA, PENDIENTE, PAGADA, CANCELADA }
+	// Clase anidada estatica
 	public static class Direccion {
 		
 	}
 	private int numFactura;
 	private Estado estado;
 	
+	// Clase anidada interna
 	public class Linea {
 		private String concepto; 
 		private double cantidad;

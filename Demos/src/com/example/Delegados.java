@@ -10,6 +10,7 @@ public class Delegados {
 		int compara(String uno, String otro);
 	}
 
+	// Ejemplos con clases explicitas
 	static class ComparaAsc implements Comparable {
 		@Override
 		public int compara(String a, String b) {
@@ -81,6 +82,7 @@ public class Delegados {
 		filtra(t, s -> s.startsWith("P"));
 	}
 
+	// Version 3: Delegados, 
 	List<String> filtra(String[] tabla, Predicate<String> where) {
 		List<String> rslt = new ArrayList<String>();
 		for(var item: tabla) 
@@ -101,6 +103,7 @@ public class Delegados {
 		// ...
 	}
 	/*
+	 * Version 2: Tipo
 	 * enum Tipo { ASC, DESC, TEXT, BIN } void ordena(String[] tabla, Tipo tipo) {
 	 * String a, b; // ... switch (tipo) { case ASC: if(a < b) {
 	 * 
@@ -115,6 +118,8 @@ public class Delegados {
 	 * } else {
 	 * 
 	 * } break;
+	 * 
+	 * Version 1: Corta y pega
 	 * 
 	 * default: break; // Excepcion } // ... } void ordenaDesc(String[] tabla) {
 	 * String a, b; // ... if(a > b) {
