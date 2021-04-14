@@ -4,6 +4,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class Principal {
 	public enum Genero {
 		DESCONOCIDO, MASCULINO, FEMENINO, NEUTRO
@@ -37,6 +39,13 @@ public class Principal {
 	}
 
 	public static void main(String[] args) {
+		Factura.Estado estado = Factura.Estado.NUEVA;
+		Pedido.Estado otroEstado = Pedido.Estado.NUEVA;
+		Factura.Direccion dir = new Factura.Direccion();
+		var fac = new Factura();
+//		Factura.Linea l = new fac.Linea(null, 0);
+		
+		
 		reflexion("com.example.Posicion", "getColumna");
 //		reflexion("com.example.Posicion", "getFila");
 		var p = new Posicion(0, 0);

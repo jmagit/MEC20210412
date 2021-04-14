@@ -1,7 +1,7 @@
 package com.example;
 
 @Autor(nombre = "Yo mismo")
-//@Table("POSICIONE")
+//@Table("POSICIONES")
 //@Value
 public class Posicion {
 //	@Colum("kk")
