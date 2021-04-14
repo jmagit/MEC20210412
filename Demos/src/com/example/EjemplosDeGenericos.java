@@ -128,10 +128,10 @@ public class EjemplosDeGenericos {
 			
 		}
 	}
-	class Elemento<K> {
 //	class Elemento<K extends Persona & Validable> {
 //	class Elemento<K extends Validable & Otro> {
 //	class Elemento<K extends Persona> {
+	class Elemento<K> {
 		private K key;
 		private String value;
 		
