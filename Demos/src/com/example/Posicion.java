@@ -13,9 +13,11 @@ public class Posicion {
 	private int fila;
 	private int columna;
 
-	public Posicion(int fila, int columna) {
+	public Posicion(int fila, int columna) throws JuegoException {
 		if(0 > fila || fila > 7)
-			throw new IndexOutOfBoundsException();
+			throw new JuegoException("Fila fuera de rango");
+		if(0 > columna || columna > 7)
+			throw new JuegoException("Columna fuera de rango");
 		this.fila = fila;
 		this.columna = columna;
 	}

@@ -48,8 +48,20 @@ public class Principal {
 		
 		reflexion("com.example.Posicion", "getColumna");
 //		reflexion("com.example.Posicion", "getFila");
-		var p = new Posicion(0, 0);
-		System.out.println(p.getClass().getAnnotation(Autor.class).nombre());
+		Posicion p;
+		try {
+			p = new Posicion(0, 0);
+			System.out.println(p.getClass().getAnnotation(Autor.class).nombre());
+		} catch (JuegoException e) {
+		}
+		mover(0, 0, 20, 0);
+	}
+
+	public static void mover(int filaini, int columnaini, int filafin, int columnafin) {
+		assert 0 <= filaini && filaini < 8 : "Fila inicial fuera de rango";
+		assert 0 <= filafin && filafin < 8 : "Fila final fuera de rango";
+		// ...
+		System.out.println("OK");
 	}
 
 	public static void reflexion(String nombre, String metodo) {
@@ -118,7 +130,7 @@ public class Principal {
 		});
 	}
 
-	public static void Clonacion() {
+	public static void Clonacion() throws Exception {
 		Juego juego = new Juego();
 		juego.init();
 		// ...
@@ -140,7 +152,15 @@ public class Principal {
 		System.out.println("Fuera del juego");
 		Juego juego2 = juego.clone();
 		// juego.tablero.ponPieza(0, 0, null);
-		juego.mover(0, 0, 0, 1);
+		try {
+			juego.mover(0, 0, 0, 1);
+			juego.mover(null, null);
+			if(true) throw new JuegoException("");
+			// ...
+		} catch (JuegoException e) {
+			// ...
+			throw e;
+		}
 		juego.mover("A1B2");
 		var otro = juego2.getTablero();
 		for (int f = 0; f < 8; f++)

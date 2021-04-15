@@ -30,6 +30,29 @@ public class EjemplosDeGenericos {
 			return false;
 		}
 		
+		<U extends Persona> U setAsistente(U asistente) {
+			// 
+			asistente.saluda();
+			return asistente;
+		}
+		<U extends Persona> void setAsistentes(U asistente) {
+			// 
+			asistente.saluda();
+			//return asistente;
+		}
+//		<U extends Persona> U getAsistente(Class tipo) {
+//			// 
+//			try {
+//			U var;
+//				U var = (U)tipo.newInstance();
+//			return var;
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//				throw new JuegoException("Algo", e);
+//			}
+//			
+//		}
+		
 	}
 
 	// Interfaz con genericos
@@ -254,6 +277,8 @@ public class EjemplosDeGenericos {
 		procesa(new ArrayList<Alumno>());
 		//procesa(new ArrayList<Aula>());
 //		if(genero instanceof Elemento)
+		Aula a = new Aula();
+		var rslt = a.setAsistente(new Alumno());
 		
 	}
 	// Restringir los posibles tipos usados

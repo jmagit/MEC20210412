@@ -44,11 +44,11 @@ public class Delegados {
 		ordena(t,  Delegados.defaultComparator());
 		ordena(t,  d::comparaLocal);
 		ordena(t,  String::compareTo);
-		
+		String prefijo = "algo";
 		ordena(t, new Comparable() {
 			@Override
 			public int compara(String a, String b) {
-				return a.compareTo(b);
+				return a.compareTo(b + prefijo);
 			}
 		});
 		ordena(t, new Comparable() {
