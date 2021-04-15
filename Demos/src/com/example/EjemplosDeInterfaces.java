@@ -9,19 +9,19 @@ public class EjemplosDeInterfaces {
 		}
 		void pintate();
 		void test();
-		default void resumen() {
+		default void resumen() { // Choque
 			test();
 		}
 	}
 	interface Validable {
 		boolean esValido();
 		void test();
-		default void resumen() {
+		default void resumen() { // Choque
 			test();
 		}
 	}
 	
-	interface Grande {
+	interface DemasiadoGrande {
 		void m1();
 		void m2();
 		void m3();

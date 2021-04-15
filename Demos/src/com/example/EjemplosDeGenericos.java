@@ -4,14 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EjemplosDeGenericos {
-	interface Repositorio<T, K> {
-		List<T> getAll();
-		T getById(K id);
-		void add(T item);
-		void modify(T item);
-		void delete(T item);
-		void deleteById(K id);
-	}
 	interface Validable {
 		boolean esValido();
 	}
@@ -40,10 +32,21 @@ public class EjemplosDeGenericos {
 		
 	}
 
+	// Interfaz con genericos
+	interface Repositorio<T, K> {
+		List<T> getAll();
+		T getById(K id);
+		void add(T item);
+		void modify(T item);
+		void delete(T item);
+		void deleteById(K id);
+	}
+	
+	// Interfaz que resuelve los genericos
 	interface ProfesorRepository extends Repositorio<Profesor, Integer> {
 		
 	}
-	
+	// Implementar el interfaz con los tipos resueltos
 	class ProfesorRepositoryImpl implements ProfesorRepository {
 
 		@Override
@@ -128,6 +131,7 @@ public class EjemplosDeGenericos {
 			
 		}
 	}
+// Restringir los posibles tipos
 //	class Elemento<K extends Persona & Validable> {
 //	class Elemento<K extends Validable & Otro> {
 //	class Elemento<K extends Persona> {
@@ -231,6 +235,7 @@ public class EjemplosDeGenericos {
 		}
 	}
 
+	// Resolución de los tipos genericos
 	void test() {
 		/* Object
 		var provincia = new Elemento(28, "Madrid");
@@ -251,6 +256,7 @@ public class EjemplosDeGenericos {
 //		if(genero instanceof Elemento)
 		
 	}
+	// Restringir los posibles tipos usados
 	void procesa(List<? extends Persona> lista) {
 		
 	}
