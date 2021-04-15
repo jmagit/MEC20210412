@@ -4,7 +4,11 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.formacion.Alumno;
+import com.example.formacion.Persona;
+import com.example.formacion.Profesor;
 
+import static java.lang.Math.*;
 
 public class Principal {
 	public enum Genero {
@@ -39,6 +43,18 @@ public class Principal {
 	}
 
 	public static void main(String[] args) {
+		consultas();
+		abs(1);
+	}
+	public static void consultas() {
+		List<Persona> l = new ArrayList<>();
+		l.add(new Alumno(1, null, null, 0));
+		l.add(new Alumno(1, null, null, 0));
+		l.add(new Alumno(1, null, null, 0));
+		l.add(new Alumno(1, null, null, 0));
+	}
+	
+	public static void tratamientos() {
 		Factura.Estado estado = Factura.Estado.NUEVA;
 		Pedido.Estado otroEstado = Pedido.Estado.NUEVA;
 		Factura.Direccion dir = new Factura.Direccion();
